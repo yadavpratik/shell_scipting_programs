@@ -1,34 +1,17 @@
 #!/bin/bash
 
-echo "script to Create new folder and delete the folder"
-pwd
-echo "present_working_dirctory"
-read -r -p "Enter Folder name :" Name
+echo "Basic linx cmd use in scripts"
 
-mkdir "${Name}"
-echo "..."
-sleep 2
-echo "Created folder : ${Name}"
-ls -l
+echo "present_working_dirctory : "
 pwd
-sleep 2
-echo "..."
-cd "${Name}" || exit
-pwd
-cd ..
-\rm -rf $Name
-pwd
-echo " Delete folder : ${Name}"
+
+echo "list item in dirctory"
 ls -l
 
-sleep 10
 
-
-# List1=$(ls)
-# echo "list : ${List1}"
-
-# date_time=$(date +"%D+%T")
-# echo "${date_time}"
+echo "Check date & time"
+date_time=$(date +"%D+%T")
+echo "${date_time}"
 
 
 
