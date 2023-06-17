@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo -x
+set -x
 
 echo "Welcome to git Automation script"
 
