@@ -16,15 +16,15 @@ pwd
 git_init(){
 	echo "checking for git init ..."
 	sleep 04
-	if git status>/dev/null          #we can also use if [ -d .git ]
+	if ! git status>/dev/null          #we can also use if [ -d .git ]
 	then
-		echo "git is already initialise"
-	else
 		echo "git is not initialise"
 		echo "Wait for initalising git into your dir"
 		git init
 		sleep 04
 		echo "git initialise succecfully"
+	else
+		echo "success"
 	fi
 }
 git_init
@@ -78,7 +78,7 @@ git_push(){
 	echo "your code sucessfully push on github"
 
 }
-git_push
+
 
 
 
