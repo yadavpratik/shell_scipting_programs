@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo -x
+
 echo "Welcome to git Automation script"
 
 check_git_install(){
