@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -x
+#set -x
 
 echo "Welcome to git Automation script"
 
@@ -23,8 +23,6 @@ git_init(){
 		git init
 		sleep 04
 		echo "git initialise succecfully"
-	else
-		echo "success"
 	fi
 }
 git_init
@@ -40,10 +38,8 @@ git_add
 git_commit(){
 	echo "checking for git commit..."
 	sleep 04	
-	if git commit -m "update commit" 2>/dev/null
+	if ! git commit -m "update commit" 2>/dev/null
 	then
-		echo "initial commit sucessfully"
-	else
 		echo "Author identity unknown"
 		read -p "please provide your github email : " email
 		read -p "please provide your name : " name
@@ -59,10 +55,8 @@ git_commit
 check_remote_dir(){
 	echo "checking for remote repositry..."
 	sleep 05
-	if git remote -v | grep -q "origin"
+	if ! git remote -v | grep -q "origin"
 	then
-		git remote -v
-  	else
 		echo "Remote repository 'origin' does not exist."
 		read -p "Enter the repo path : " repo
 		git remote add origin "$repo"
