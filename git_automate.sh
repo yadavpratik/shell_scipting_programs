@@ -5,17 +5,17 @@
 echo "Welcome to git Automation script"
 
 git_install(){
-	echo "checking your git Install..."
-	if ! git --version
+	echo "checking for git Install in your system..."
+	if ! git --version >/dev/null
 	then
 		echo "git is not install in your system"
 		echo "Please install git"
+	else
 		echo "$(git --version)"
 	fi
 }
 git_install
 
-check_git_install
 
 git_init(){
 	echo "checking for git init ..."
