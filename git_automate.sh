@@ -2,7 +2,6 @@
 
 #set -x
 
-echo "Welcome to git Automation script"
 
 git_install(){
 	echo "checking for git Install in your system..."
@@ -14,7 +13,7 @@ git_install(){
 		echo "$(git --version)"
 	fi
 }
-git_install
+
 
 
 git_init(){
@@ -29,7 +28,7 @@ git_init(){
 		echo "git initialise succecfully"
 	fi
 }
-git_init
+
 
 
 git_add(){
@@ -37,7 +36,6 @@ git_add(){
 
 }
 
-git_add
 
 git_commit(){
 	echo "checking for git commit..."
@@ -54,9 +52,8 @@ git_commit(){
 
 	fi
 }
-git_commit
 
-check_remote_dir(){
+git_remote_dir(){
 	echo "checking for remote repositry..."
 	sleep 05
 	if ! git remote -v | grep -q "origin"
@@ -68,7 +65,6 @@ check_remote_dir(){
 
 	fi	
 }
-check_remote_dir
 
 git_push(){
 	echo "please wait we push your code on gtihub repositry..."
@@ -76,9 +72,18 @@ git_push(){
 	echo "your code sucessfully push on github"
 
 }
+
+
+main(){
+echo "Welcome to git Automation script"
+git_install
+git_init
+git_add
+git_commit
+git_remote_dir
 git_push
 
-
-
+}
+main
 
 
