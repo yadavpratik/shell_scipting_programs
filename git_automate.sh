@@ -4,15 +4,19 @@
 
 echo "Welcome to git Automation script"
 
-check_git_install(){
-	echo "checking your git version..."
-	Version=$(git --version)
-	echo "$Version"
+git_install(){
+	echo "checking your git Install..."
+	if ! git --version
+	then
+		echo "git is not install in your system"
+		echo "Please install git"
+		echo "$(git --version)"
+	fi
 }
+git_install
 
 check_git_install
 
-pwd
 git_init(){
 	echo "checking for git init ..."
 	sleep 04
@@ -72,6 +76,7 @@ git_push(){
 	echo "your code sucessfully push on github"
 
 }
+git_push
 
 
 
